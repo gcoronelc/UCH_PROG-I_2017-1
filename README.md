@@ -29,6 +29,7 @@
 - Repositorio de curso Java: https://github.com/gcoronelc/CEPSUNI_JAVA_OO_001
 - Curso virtual de Java: https://www.edx.org/course/programacion-orientada-objetos-mexicox-upevipn02x
 - Video motivacional: https://www.youtube.com/watch?v=0FdVAhfrW44
+- Video motivacional: https://www.facebook.com/Futbole2017/videos/1864058510498768/
 - Curso de Java: https://devcode.la/cursos/fundamentos-java/
 - Grupo de Java: https://www.facebook.com/groups/universidadjava/
 
