@@ -1,0 +1,23 @@
+PROYECTO
+========
+
+Simular las ventas de una tienda de
+equipos electrónicos y compuatación.
+
+Debe permitir tener un listado de las
+ventas y un resumen por categoría.
+
+Categorías:
+===================
+- LAPTOPS       = "LAPTOPS
+- CELULARES     = "CELULARES
+- TABLE         = "TABLE
+- TELEVISORES   = "TELEVISORES
+- IMPRESORAS    = "IMPRESORAS
+- ACCESORIOS    = "ACCESORIOS
+
+
+
+
+
+

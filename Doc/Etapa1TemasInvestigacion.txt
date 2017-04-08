@@ -1,8 +1,18 @@
 1.- Patrones Factory
+    Ventocilla, Señas, Espinoza.
+
 2.- Principios SOLID
+    Maclena, Taipe, Santiago
+
 3.- Expresiones Lambda y Strem en Java 8
+
 4.- Pruebas Unitarias
+    Soles, 
+
 5.- Manejo de Archivos Log
+    Aymachoque, 
+
 6.- Manejo de Datos Genericos - Generic
+
 7.- Patrón Inyección de Dependencias
 
