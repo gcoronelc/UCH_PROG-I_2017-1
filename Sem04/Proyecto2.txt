@@ -1,0 +1,20 @@
+PROYECTO
+========
+
+Desarrollar un proyecto para registrar
+estudiantes y sua respectivas notas.
+
+Debe calcular el promedio.
+
+Debe permitir consultar los estudiantes
+de un curso.
+
+Tambien debe permitir consultar el mejor
+estudiante por curso.
+
+
+
+
+
+
+
