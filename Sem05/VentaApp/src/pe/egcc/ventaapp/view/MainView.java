@@ -6,6 +6,7 @@ public class MainView extends javax.swing.JFrame {
 
   public MainView() {
     initComponents();
+    this.setExtendedState(MAXIMIZED_BOTH);
   }
 
   /**
@@ -33,6 +34,7 @@ public class MainView extends javax.swing.JFrame {
     menuVenta = new javax.swing.JMenu();
     menuVentaVenta = new javax.swing.JMenuItem();
     menuVentaConsulta = new javax.swing.JMenuItem();
+    menuVentaResumen = new javax.swing.JMenuItem();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("SISTEMAS DE VENTA");
@@ -116,6 +118,14 @@ public class MainView extends javax.swing.JFrame {
     });
     menuVenta.add(menuVentaConsulta);
 
+    menuVentaResumen.setText("Resumen");
+    menuVentaResumen.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuVentaResumenActionPerformed(evt);
+      }
+    });
+    menuVenta.add(menuVentaResumen);
+
     menuBar.add(menuVenta);
 
     setJMenuBar(menuBar);
@@ -145,6 +155,10 @@ public class MainView extends javax.swing.JFrame {
   private void menuVentaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVentaConsultaActionPerformed
     cargarFormulario(ReporteView.class);
   }//GEN-LAST:event_menuVentaConsultaActionPerformed
+
+  private void menuVentaResumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVentaResumenActionPerformed
+    cargarFormulario(ResumenView.class);
+  }//GEN-LAST:event_menuVentaResumenActionPerformed
 
   /**
    * @param args the command line arguments
@@ -195,6 +209,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JMenuBar menuBar;
   private javax.swing.JMenu menuVenta;
   private javax.swing.JMenuItem menuVentaConsulta;
+  private javax.swing.JMenuItem menuVentaResumen;
   private javax.swing.JMenuItem menuVentaVenta;
   private javax.swing.JMenuItem openMenuItem;
   private javax.swing.JMenuItem pasteMenuItem;

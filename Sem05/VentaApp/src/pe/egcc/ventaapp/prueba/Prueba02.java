@@ -1,6 +1,7 @@
 package pe.egcc.ventaapp.prueba;
 
 import java.util.List;
+import pe.egcc.ventaapp.model.ResumenModel;
 import pe.egcc.ventaapp.model.VentaModel;
 import pe.egcc.ventaapp.service.impl.VentaService;
 
@@ -17,9 +18,18 @@ public class Prueba02 {
     service.regVenta(new VentaModel(cate.get(1), "Pedro", "Aalgo", 986.12, 8));
     service.regVenta(new VentaModel(cate.get(01), "Pedro", "Aaaaa", 765.78, 9));
     // Listado
+    System.out.println("LISTADO");
+    System.out.println("----------------------------------------");
     List<VentaModel> ventas = service.listadoVentas(cate.get(1));
     for (VentaModel venta : ventas) {
       System.out.println(venta.toString());
+    }
+    
+    // Resumen
+    System.out.println("RESUMEN");
+    System.out.println("------------------------------------");
+    for(ResumenModel model: service.obtenerResumen()){
+      System.out.println(model.toString());
     }
 
   }

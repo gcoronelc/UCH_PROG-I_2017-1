@@ -3,6 +3,7 @@ package pe.egcc.ventaapp.service.impl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import pe.egcc.ventaapp.model.ResumenModel;
 import pe.egcc.ventaapp.model.VentaModel;
 import pe.egcc.ventaapp.service.spec.VentaServiceSpec;
 import pe.egcc.ventaapp.util.MateUtil;
@@ -53,6 +54,37 @@ public class VentaService implements VentaServiceSpec{
     }
     return listaAux;
   }
+
+  @Override
+  public List<ResumenModel> obtenerResumen() {
+    List<ResumenModel> listaResumen = new ArrayList<>();
+    // ------------------------------------------------------------
+    List<String> categorias = getCategorias();
+    for (String categoria : categorias) {
+      ResumenModel resumen = obtenerResumenCategoria(categoria);
+      if( resumen.getCantidad() > 0 ){
+      listaResumen.add(resumen);
+      }
+    }
+    // ------------------------------------------------------------
+    return listaResumen;
+  }
+
+  private ResumenModel obtenerResumenCategoria(String categoria) {
+    ResumenModel rm = new ResumenModel();
+    rm.setCategoria(categoria);
+    for(VentaModel ventaModel: Data.data){
+      if(ventaModel.getCategoria().equals(categoria)){
+      rm.setCantidad(rm.getCantidad() + ventaModel.getCantidad());
+      rm.setImporte(rm.getImporte()+ ventaModel.getSubtotal());
+      rm.setImpuesto(rm.getImpuesto()+ ventaModel.getImpuesto());
+      rm.setTotal(rm.getTotal()+ ventaModel.getTotal());
+      }
+    }
+    return rm;
+  }
+  
+  
   
   
 }

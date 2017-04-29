@@ -1,6 +1,7 @@
 package pe.egcc.ventaapp.service.spec;
 
 import java.util.List;
+import pe.egcc.ventaapp.model.ResumenModel;
 import pe.egcc.ventaapp.model.VentaModel;
 
 public interface VentaServiceSpec {
@@ -34,5 +35,8 @@ public interface VentaServiceSpec {
    * @return 
    */
   public List<VentaModel> listadoVentas(String categoria);
+  
+  
+  public List<ResumenModel> obtenerResumen();
   
 }

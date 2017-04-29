@@ -157,6 +157,7 @@ public class VentaView extends javax.swing.JInternalFrame {
   private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
     // Datos
     VentaModel model = new VentaModel();
+    model.setCliente(txtCliente.getText());
     model.setCategoria(cboCategoria.getSelectedItem().toString());
     model.setProducto(txtProducto.getText());
     model.setPrecio(Double.parseDouble(txtPrecio.getText()));
