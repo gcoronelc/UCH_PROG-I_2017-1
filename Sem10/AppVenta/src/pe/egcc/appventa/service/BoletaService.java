@@ -8,6 +8,8 @@ public class BoletaService extends VentaAbstract{
   public Item[] procesarVenta(double total) {
     // Variables
     double servicio, totalGeneral;
+    // validar
+    validaTotal(total);
     // Proceso
     servicio = total * 0.10;
     totalGeneral = total + servicio;

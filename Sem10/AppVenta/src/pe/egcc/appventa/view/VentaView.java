@@ -1,20 +1,23 @@
 package pe.egcc.appventa.view;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import pe.egcc.appventa.controller.VentaController;
+import pe.egcc.appventa.model.Item;
 
 public class VentaView extends javax.swing.JFrame {
 
   private VentaController control;
-  
+
   public VentaView() {
     initComponents();
     control = new VentaController();
     llenarCombo();
   }
-  
-  private void llenarCombo(){
+
+  private void llenarCombo() {
     cboTipo.removeAllItems();
-    for(String tipo: control.getTipos()){
+    for (String tipo : control.getTipos()) {
       cboTipo.addItem(tipo);
     }
     cboTipo.setSelectedIndex(-1);
@@ -31,7 +34,7 @@ public class VentaView extends javax.swing.JFrame {
     cboTipo = new javax.swing.JComboBox<>();
     jLabel2 = new javax.swing.JLabel();
     txtTotal = new javax.swing.JTextField();
-    jButton1 = new javax.swing.JButton();
+    btnProcesar = new javax.swing.JButton();
     jScrollPane1 = new javax.swing.JScrollPane();
     tblRepo = new javax.swing.JTable();
 
@@ -49,13 +52,15 @@ public class VentaView extends javax.swing.JFrame {
 
     txtTotal.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-    jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-    jButton1.setText("Procesar");
-    jButton1.addActionListener(new java.awt.event.ActionListener() {
+    btnProcesar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+    btnProcesar.setText("Procesar");
+    btnProcesar.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton1ActionPerformed(evt);
+        btnProcesarActionPerformed(evt);
       }
     });
+
+    jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "REPORTE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(51, 0, 153))); // NOI18N
 
     tblRepo.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
@@ -98,17 +103,16 @@ public class VentaView extends javax.swing.JFrame {
         .addGap(47, 47, 47)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-            .addGroup(layout.createSequentialGroup()
-              .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-              .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-              .addComponent(txtTotal))))
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(cboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(txtTotal)))
         .addGap(46, 46, 46)
-        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(84, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
@@ -116,7 +120,7 @@ public class VentaView extends javax.swing.JFrame {
       .addGroup(layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(btnProcesar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
               .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -133,19 +137,33 @@ public class VentaView extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    // Datos
-    
-    // Santiago
-    
-    // Proceso
-    
-    // Paico
-    
-    // Reporte
-    
-    // Fanny
-  }//GEN-LAST:event_jButton1ActionPerformed
+  private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+    try {
+      // Validar - Soles
+      if (cboTipo.getSelectedIndex() == -1) {
+        throw new Exception("Falta seleccionar el tipo.");
+      }
+      if (txtTotal.getText().isEmpty()) {
+        throw new Exception("Falta ingresar el total.");
+      }
+      // Datos - Santiago
+      String tipo = cboTipo.getSelectedItem().toString();
+      double total = Double.parseDouble(txtTotal.getText());
+      // Proceso - Señas
+      Item[] repo = control.procesarVenta(tipo, total);
+      // Reporte - Fanny
+      DefaultTableModel tabla;
+      tabla = (DefaultTableModel) tblRepo.getModel();
+      tabla.setRowCount(0);
+      for (Item item : repo) {
+        Object[] rowData = {item.getConcepto(), item.getValor()};
+        tabla.addRow(rowData);
+      }
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(rootPane, e.getMessage(),
+              "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+  }//GEN-LAST:event_btnProcesarActionPerformed
 
   /**
    * @param args the command line arguments
@@ -183,8 +201,8 @@ public class VentaView extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton btnProcesar;
   private javax.swing.JComboBox<String> cboTipo;
-  private javax.swing.JButton jButton1;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JScrollPane jScrollPane1;

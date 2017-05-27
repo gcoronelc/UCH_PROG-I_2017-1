@@ -8,6 +8,8 @@ public class FacturaService extends VentaAbstract{
   public Item[] procesarVenta(double total) {
     // Variables
     double importe, impuesto, servicio, totalGeneral;
+    // validar
+    validaTotal(total);
     // Proceso
     importe = total / 1.18;
     impuesto = total - importe;

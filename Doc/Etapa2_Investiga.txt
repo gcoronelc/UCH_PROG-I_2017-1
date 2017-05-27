@@ -1,0 +1,52 @@
+Temas de Investigación
+=======================
+
+1.- Expresiones Lambda y Strem en Java 8
+    Ventocilla, Espinoza, Señas
+
+2.- Hilos
+    Taipe 
+
+3.- Archivos Log con Java
+    Soles
+
+4.- Reportes con Jasper Report
+
+
+5.- Generics
+    Paico
+
+6.- Manejo de documentos XML
+    (XML, DTD, Esquemas, XLS, XLST, Librerias para Java, Etc.)
+    
+
+7.- API JSON de Java
+
+
+9.- Implementación de un CRUD con JDBC
+
+
+10.- Pruebas Unitarias
+     Santiago     
+
+
+
+PRESENTA
+===================================
+Todo en un repositorio en GitHub
+- Monografia - Formato APA - DOCX
+- La presentación de la exposición - PPTX
+- El enlace del video en youTube
+
+
+EVALUACION
+==================================
+- Presentación del estudiante - Individual
+- Monografía - Grupal
+- Exposición - Individual
+- Ejemplos o Casos - Grupal
+- Respuestas a preguntas - Individual
+- Video en Youtube - Grupal
+
+
+
