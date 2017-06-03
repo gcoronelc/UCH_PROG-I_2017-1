@@ -1,5 +1,7 @@
 ![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/uch_prog_1.png)
 
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_200119680.jpg)
+
 # PROGRAMACIÓN I
 
 - Lugar: UNIVERSIDAD DE CIENCIAS Y HUMANIDADES
