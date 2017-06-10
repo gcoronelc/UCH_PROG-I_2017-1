@@ -1,6 +1,17 @@
 ![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/uch_prog_1.png)
 
-![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_200119680.jpg)
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_195934633.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_195938027.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Sem12/IMG_20170609_185753594.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Sem12/IMG_20170609_193052314.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Sem12/IMG_20170609_193235873.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Sem12/IMG_20170609_193237650.jpg)
+
 
 # PROGRAMACIÓN I
 
@@ -36,6 +47,15 @@
 - Grupo de Java: https://www.facebook.com/groups/universidadjava/
 - Test de Java: http://www.testprogramacion.com/java
 
+
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_200112391.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170602_200119680.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170609_202201506_HDR.jpg)
+
+![PROGRAMACIÓN I](https://raw.githubusercontent.com/gcoronelc/UCH_PROG-I_2017-1/master/Fotos/IMG_20170609_202205105_HDR.jpg)
 
 
 
