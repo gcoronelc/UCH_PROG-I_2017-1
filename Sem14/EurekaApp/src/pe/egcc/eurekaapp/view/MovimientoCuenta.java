@@ -4,85 +4,85 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import pe.egcc.eurekaapp.controller.MovimientosController;
+import pe.egcc.eurekaapp.controller.CuentaController;
 
 public class MovimientoCuenta extends javax.swing.JFrame {
 
-    private MovimientosController control;
+    private CuentaController control;
 
     public MovimientoCuenta() {
         initComponents();
-        control = new MovimientosController();
+        control = new CuentaController();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+  private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatos = new javax.swing.JTable();
+    jPanel1 = new javax.swing.JPanel();
+    jLabel1 = new javax.swing.JLabel();
+    txtCodigo = new javax.swing.JTextField();
+    jButton1 = new javax.swing.JButton();
+    jPanel2 = new javax.swing.JPanel();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    tblDatos = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(911, 477));
-        setPreferredSize(new java.awt.Dimension(911, 477));
+    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setMinimumSize(new java.awt.Dimension(911, 477));
+    setPreferredSize(new java.awt.Dimension(911, 477));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 30, 30, 30));
-        jPanel1.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
+    jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 30, 30, 30));
+    jPanel1.setLayout(new java.awt.GridLayout(1, 0, 20, 0));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel1.setText("N° CUENTA:");
-        jPanel1.add(jLabel1);
+    jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+    jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+    jLabel1.setText("N° CUENTA:");
+    jPanel1.add(jLabel1);
 
-        txtCodigo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jPanel1.add(txtCodigo);
+    txtCodigo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+    jPanel1.add(txtCodigo);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("CONSULTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1);
+    jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+    jButton1.setText("CONSULTAR");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
+    jPanel1.add(jButton1);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+    getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 20, 20));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+    jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 20, 20));
+    jPanel2.setLayout(new java.awt.BorderLayout());
 
-        tblDatos.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+    tblDatos.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+    tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
 
-            },
-            new String [] {
-                "Cuenta codigo", "Numero", "Fecha", "Codigo empleado", "Tipo codigo", "Importe", "Referencia"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
+      },
+      new String [] {
+        "Cuenta codigo", "Numero", "Fecha", "Codigo empleado", "Tipo codigo", "Importe", "Referencia"
+      }
+    ) {
+      boolean[] canEdit = new boolean [] {
+        false, false, false, false, false, false, false
+      };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDatos.setRowHeight(30);
-        jScrollPane1.setViewportView(tblDatos);
+      public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+      }
+    });
+    tblDatos.setRowHeight(30);
+    jScrollPane1.setViewportView(tblDatos);
 
-        jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+    jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+    getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    pack();
+    setLocationRelativeTo(null);
+  }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -147,13 +147,13 @@ public class MovimientoCuenta extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtCodigo;
-    // End of variables declaration//GEN-END:variables
+  // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton jButton1;
+  private javax.swing.JLabel jLabel1;
+  private javax.swing.JPanel jPanel1;
+  private javax.swing.JPanel jPanel2;
+  private javax.swing.JScrollPane jScrollPane1;
+  private javax.swing.JTable tblDatos;
+  private javax.swing.JTextField txtCodigo;
+  // End of variables declaration//GEN-END:variables
 }

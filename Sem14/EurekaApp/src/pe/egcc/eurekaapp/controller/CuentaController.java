@@ -6,14 +6,22 @@ import pe.egcc.eurekaapp.service.CuentaService;
 
 public class CuentaController {
 
-    private CuentaService service;
+  private CuentaService service;
 
-    public CuentaController() {
-        service = new CuentaService();
-    }
-    
-    public List<Map<String, Object>> getCuentasSucursal(String codigo) {
-        return service.getCuentasSucursal(codigo);
-    }
-    
+  public CuentaController() {
+    service = new CuentaService();
+  }
+
+  public List<Map<String, Object>> getCuentasSucursal(String codigo) {
+    return service.getCuentasSucursal(codigo);
+  }
+
+  public List<Map<String, Object>> getMoveCuenta(String codigo) {
+    return service.getMovimientosCuenta(codigo);
+  }
+
+  public List<Map<String, Object>> getMoveEmpleado(String codigo) {
+    return service.getMovimientosEmpleado(codigo);
+  }
+
 }
