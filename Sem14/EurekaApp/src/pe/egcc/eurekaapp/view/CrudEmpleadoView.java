@@ -4,12 +4,14 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import pe.egcc.eurekaapp.controller.EmpleadoController;
 import pe.egcc.eurekaapp.model.Empleado;
+import pe.egcc.eurekaapp.util.Eureka;
 import pe.egcc.eurekaapp.util.Mensaje;
+import pe.egcc.eurekaapp.util.Session;
 
 public class CrudEmpleadoView extends javax.swing.JInternalFrame {
 
   private List<Empleado> lista = null;
-  
+
   public CrudEmpleadoView() {
     initComponents();
   }
@@ -56,10 +58,25 @@ public class CrudEmpleadoView extends javax.swing.JInternalFrame {
     });
 
     btnNuevo.setText("Nuevo");
+    btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnNuevoActionPerformed(evt);
+      }
+    });
 
     btnEditar.setText("Editar");
+    btnEditar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEditarActionPerformed(evt);
+      }
+    });
 
     btnEliminar.setText("Eliminar");
+    btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEliminarActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -119,10 +136,7 @@ public class CrudEmpleadoView extends javax.swing.JInternalFrame {
 
     tblRepo.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null}
+
       },
       new String [] {
         "CODIGO", "PATERNO", "MATERNO", "NOMBRE", "CIUDAD", "DIRECCIÓN"
@@ -143,6 +157,7 @@ public class CrudEmpleadoView extends javax.swing.JInternalFrame {
         return canEdit [columnIndex];
       }
     });
+    tblRepo.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
     jScrollPane1.setViewportView(tblRepo);
     if (tblRepo.getColumnModel().getColumnCount() > 0) {
       tblRepo.getColumnModel().getColumn(0).setResizable(false);
@@ -178,18 +193,74 @@ public class CrudEmpleadoView extends javax.swing.JInternalFrame {
       String paterno = txtPaterno.getText();
       String materno = txtMaterno.getText();
       String nombre = txtNombre.getText();
-      
+
       // Proceso
       EmpleadoController control = new EmpleadoController();
       lista = control.leer(paterno, materno, nombre);
-      
+
       // Reporte
       mostrarLista();
-    
+
     } catch (Exception e) {
       Mensaje.showError(rootPane, e.getMessage());
     }
   }//GEN-LAST:event_btnBuscarActionPerformed
+
+  private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+
+    Empleado bean = new Empleado();
+    bean.setCodigo(Eureka.CRUD_NUEVO);
+
+    CrudEmpleadoEditView view = new CrudEmpleadoEditView(null, true);
+    view.setAccion(Eureka.CRUD_NUEVO);
+    view.setBean(bean);
+    Session.put("bean", null);
+    Session.put("bean", null);
+    view.setVisible(true);
+
+  }//GEN-LAST:event_btnNuevoActionPerformed
+
+  private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+
+    int fila = tblRepo.getSelectedRow();
+    if (fila == -1) {
+      return;
+    }
+
+    Empleado bean = lista.get(fila);
+
+    CrudEmpleadoEditView view = new CrudEmpleadoEditView(null, true);
+    view.setAccion(Eureka.CRUD_EDITAR);
+    view.setBean(bean);
+    Session.put("bean", null);
+    view.setVisible(true);
+    
+    if( Session.get("bean") != null){
+      
+      bean = (Empleado) Session.get("bean");
+      lista.set(fila, bean);
+      mostrarLista();
+      tblRepo.setRowSelectionInterval(fila, fila);
+      
+    }
+
+
+  }//GEN-LAST:event_btnEditarActionPerformed
+
+  private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    
+    int fila = tblRepo.getSelectedRow();
+    if (fila == -1) {
+      return;
+    }
+
+    Empleado bean = lista.get(fila);
+
+    CrudEmpleadoEditView view = new CrudEmpleadoEditView(null, true);
+    view.setAccion(Eureka.CRUD_ELIMINAR);
+    view.setBean(bean);
+    view.setVisible(true);
+  }//GEN-LAST:event_btnEliminarActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,20 +280,20 @@ public class CrudEmpleadoView extends javax.swing.JInternalFrame {
   // End of variables declaration//GEN-END:variables
 
   private void mostrarLista() {
-  
+
     // Accediendo a la tabla
     DefaultTableModel tabla;
     tabla = (DefaultTableModel) tblRepo.getModel();
-    
+
     // Eliminar datos
     tabla.setRowCount(0);
-    
+
     // Cargar datos
     for (Empleado e : lista) {
       Object[] rowData = {e.getCodigo(), e.getPaterno(),
         e.getMaterno(), e.getNombre(), e.getCiudad(), e.getDireccion()};
       tabla.addRow(rowData);
     }
-    
+
   }
 }

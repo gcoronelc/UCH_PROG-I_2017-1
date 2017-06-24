@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/view/CrudEmpleadoView.java</file>
             <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/view/MainView.java</file>
-            <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/view/CuentasPorSucursalView.java</file>
+            <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/controller/EmpleadoController.java</file>
+            <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/view/CrudEmpleadoEditView.java</file>
+            <file>file:/E:/EGCC/Git/UCH_PROG-I_2017-1/Sem14/EurekaApp/src/pe/egcc/eurekaapp/view/CrudEmpleadoView.java</file>
         </group>
     </open-files>
 </project-private>
